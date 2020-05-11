@@ -1,0 +1,34 @@
+Employees
+-
+emp_no INT PK FK >- Salaries.salary
+title_id INT FK - Titles.title_id
+birth_date DATE
+first_name VARCHAR(50) 
+last_name VARCHAR(50)
+sex VARCHAR(10)
+hire_date DATE
+
+Titles
+-
+title_id INT PK
+title VARCHAR(50)
+
+Dept_emp
+-
+emp_no INT PK
+dept_no INT FK >- Departments.dept_name
+
+Departments
+-
+dept_no INT PK
+dept_name VARCHAR(50)
+
+Dept_manager
+-
+dept_no INT PK
+emp_no INT FK >- Dept_emp.dept_no
+
+Salaries
+-
+emp_no INT PK FK >- Dept_emp.emp_no
+salary INT
