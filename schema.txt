@@ -1,7 +1,7 @@
 Employees
 -
-emp_no INT PK FK >- Salaries.salary
-title_id INT FK - Titles.title_id
+emp_no INT PK FK >- Salaries.emp_no
+title_id VARCHAR(50) FK - Titles.title_id
 birth_date DATE
 first_name VARCHAR(50) 
 last_name VARCHAR(50)
@@ -15,18 +15,19 @@ title VARCHAR(50)
 
 Dept_emp
 -
-emp_no INT PK
-dept_no INT FK >- Departments.dept_name
+emp_no INT PK FK >- Dept_manager.emp_no
+dept_no VARCHAR(50) FK >- Departments.dept_no
+UNIQUE(emp_no, dept_no)
 
 Departments
 -
-dept_no INT PK
+dept_no VARCHAR(50) PK
 dept_name VARCHAR(50)
 
 Dept_manager
 -
-dept_no INT PK
-emp_no INT FK >- Dept_emp.dept_no
+dept_no VARCHAR(50)
+emp_no INT PK
 
 Salaries
 -
